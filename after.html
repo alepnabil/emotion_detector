@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <div class="content">
+
+              <div class="face_detection">
+                <img src="{{url_for('static', filename='after.jpg')}}" alt="image" >
+                <h1 class="prediction">{{prediction_text}}</h1>
+              </div>
+
+              <!---basically post a request to the server to get the home page---> 
+              <form action="{{ url_for('Home')}}" method='POST'>
+                      <button type="submit" class="predict_again">DETECT AGAIN</button>
+              </form>
+    </div>
+
+</body>
+</html> 
+
+<style>html,body{
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.content{
+  width: auto;
+  height: 100%;
+  padding: 40px;
+  background-color: #36669d;
+  background-image: linear-gradient(315deg, #36669d 0%, #d3d3d3 74%);
+  margin: 20px;
+  position: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-align: center;
+  background-color: white;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+}
+
+
+
+.face_detection img{
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  height: 400px;
+}
+
+.predict_again{
+  margin-top: 40px;
+  background-color: linear-gradient(315deg, #36669d 0%, #d3d3d3 74%);
+  background-color: #36669d ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 50px;
+  margin-left: 20px;
+  padding: 15px 32px;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  border-color: black;
+  position: relative;
+  transition-duration: 0.4;
+  margin-top: 30px;
+
+}
+.predict_again:hover{
+  color:black;
+}
+.predict_again:active{
+  color:#222;
+  box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+  
+}
+
+.prediction{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 0.7;
+  color: black;
+  font-size: 40px;
+  align-items: center;
+  margin-left: 25px;
+}
+
+
+</style>
